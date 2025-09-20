@@ -1,26 +1,23 @@
 import 'package:flutter/material.dart';
-import 'screens/home_screen.dart';
-import 'screens/add_expense_screen.dart';
+import 'package:tracker_app/screens/home_screen.dart';
+
 
 void main() {
-  runApp(const ExpenseTrackerApp());
+runApp(const TrackerApp());
 }
 
-class ExpenseTrackerApp extends StatelessWidget {
-  const ExpenseTrackerApp({super.key});
 
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Expense Tracker',
-      theme: ThemeData(
-        colorSchemeSeed: Colors.teal,
-        useMaterial3: true,
-      ),
-      routes: {
-        '/': (ctx) => const HomeScreen(),
-        AddExpenseScreen.routeName: (ctx) => const AddExpenseScreen(),
-      },
-    );
-  }
+class TrackerApp extends StatelessWidget {
+const TrackerApp({super.key});
+
+
+@override
+Widget build(BuildContext context) {
+return MaterialApp(
+debugShowCheckedModeBanner: false,
+title: 'Tracker App',
+theme: ThemeData(useMaterial3: true, colorSchemeSeed: Colors.blue),
+home: const HomeScreen(),
+);
+}
 }
